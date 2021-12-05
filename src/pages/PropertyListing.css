@@ -1,0 +1,8 @@
+.property-listing {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  column-gap: 3.625rem;
+  padding:0;  
+  margin: 2.375rem var(--horiz-margin) var(--horiz-margin);
+}

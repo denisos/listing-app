@@ -1,0 +1,8 @@
+{
+  "listing.config": "{bedrooms} BR | {baths} Bath | {area} Sq Ft",
+  "listing.listed": "Listed",
+  "listing.title": "Property Listings",
+
+  "page.loading.error": "Oops, something went wrong. Try reloading the page.",
+  "page.loading.loading": "Loading.."
+}

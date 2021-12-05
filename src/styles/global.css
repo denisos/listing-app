@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+:root {
+  --font-color-primary: #2D2D2D;
+  --font-color-primary-alt: #979797;
+  --horiz-margin: 1.063rem;
+  --background-color-primary: #F4F4F4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--font-color-primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h2 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+}
+h3 {
+  font-size: 1.625rem;
+  font-weight: bold;
+  line-height: 1.438rem;
+}
+
+small {
+  color: var(--font-color-primary-alt);
+  font-size: 0.875rem;
+}
+
+address, p {
+  margin: 0;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1179px) and (min-width: 376px) {
+  :root {
+    --horiz-margin: 2.5rem;
+  }
+  h2 {
+    font-size: 1.313rem;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  :root {
+    --horiz-margin: 3.75rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+}

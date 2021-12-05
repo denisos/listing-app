@@ -1,0 +1,8 @@
+{
+  "listing.config": "{area} Sq Ft | {bedrooms} Camas | {baths} Bano",
+  "listing.listed": "Listed",
+  "listing.title": "Listados de propiedades",
+
+  "page.loading.error": "Huy! Algo salió mal. Intente volver a cargar la página.",
+  "page.loading.loading": "Cargando.."
+}

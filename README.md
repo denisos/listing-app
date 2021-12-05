@@ -1,7 +1,7 @@
 # listing-app
 The next frontier in real estate and mls listings!
 
-A mobile first responsive, internationalized, accessible, local caching
+A (simple) mobile first responsive, internationalized, accessible, api driven and caching app. 
 
 Built as a create react app.
 
@@ -29,7 +29,7 @@ I created a useListings hook to provide the data and also handle localSotrage ca
 Uses https://api.simplyrets.com/properties to fetch mock listing data.
 
 ## accessability
-- uses semantic markup e.g. <h2>, <h3>, <address>, <small>, <ul>, <button>               
+- uses semantic markup e.g. `<h2>, <h3>, <address>, <small>, <ul>, <button>`               
 - images: "title" and "alt" text on images
 - tabbing each card and fave icon 
 - tab on to heart icon
@@ -39,18 +39,19 @@ Uses https://api.simplyrets.com/properties to fetch mock listing data.
 - fluid layout using flexbox
 - mobile first (heading text and margins)
 - media queries, screen widths 375 to 1180 and between
-    760: h2/margins change to appprox mid
-   1180: h2 change fs to 28px (all others same); change margins/padding to more
+    - 375 default
+    - 760: h2/margins change to appprox mid
+    - 1180: h2 change fs to 28px (all others same); change margins/padding to more
 
 ## testing
-- uses react-testing-library
+- uses react-testing-library and jest
 - for e2e testing I'd use cypress.io (future)
 - for static code checking I'd want typescript
 
 ## left to do
 - "Listed" year as yy
 - page loading and error states are super basic
-- more abstraction
+- more abstractions
 - more tests
 - convert to typescript
 

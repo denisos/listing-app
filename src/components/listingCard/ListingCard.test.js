@@ -14,7 +14,7 @@ test('should render ListingCard with mock data which is fave', () => {
   const handleFaveClickSpy = jest.fn();
   const { getByAltText } = render(<ListingCard listing={mockListingFave} handleFaveClick={handleFaveClickSpy} />);
 
-  expect(screen.getByRole('heading')).toHaveTextContent('$135,987.00')
+  expect(screen.getByRole('heading')).toHaveTextContent('$135,987')
   screen.getAllByAltText(/74434 East Sweet Bottom Br #18393/i);
 });
 
@@ -23,7 +23,7 @@ test('should render ListingCard with mock data which is not fave', () => {
   const handleFaveClickSpy = jest.fn();
   render(<ListingCard listing={mockListingNotFave} handleFaveClick={handleFaveClickSpy} />);
 
-  expect(screen.getByRole('heading')).toHaveTextContent('$2,071,426.00');
+  expect(screen.getByRole('heading')).toHaveTextContent('$2,071,426');
   screen.getAllByAltText(/23 Main Street/i);
 });
 

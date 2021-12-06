@@ -29,7 +29,7 @@ function ListingCardContent({ listing }) {
     <div className="listing-card-content">
       <ListingConfigStats listing={listing} />
 
-      <h3><FormattedNumber value={listPrice} style="currency" currency="USD" /></h3>
+      <h3><FormattedNumber value={listPrice} style={"currency"} currency="USD" /></h3>
 
       <address>{formatAddress(listing)}</address>
 

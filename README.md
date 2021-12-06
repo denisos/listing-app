@@ -29,7 +29,7 @@ I created a useListings hook to provide the data and also handle localSotrage ca
 Uses https://api.simplyrets.com/properties to fetch mock listing data.
 
 ## accessability
-- uses semantic markup e.g. `<h2>, <h3>, <address>, <small>, <ul>, <button>`               
+- uses semantic markup e.g. `<h2>, <h3>, <address>, <small>, <ul>`
 - images: "title" and "alt" text on images
 - tabbing each card and fave icon 
 - tab on to heart icon
@@ -44,14 +44,19 @@ Uses https://api.simplyrets.com/properties to fetch mock listing data.
     - 1180: h2 change fs to 28px (all others same); change margins/padding to more
 
 ## testing
-- uses react-testing-library and jest
+- uses react-testing-library and jest; mocked react-intl
 - for e2e testing I'd use cypress.io (future)
 - for static code checking I'd want typescript
 
 ## left to do
 - "Listed" year as yy
-- page loading and error states are super basic
+- don't just update localStorage after fetch but instead check if data changed or is stale
+- more tests e.g. mocking localStorage, useListings hook
 - more abstractions
-- more tests
+  - e.g. hook for localStorage
+  - e.g. use of react context
+  - e.g. consider react reducer for listing updates
+- page loading and error states are super basic
+- convert to use scss (or similar)
 - convert to typescript
 

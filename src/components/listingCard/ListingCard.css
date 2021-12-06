@@ -1,3 +1,10 @@
 .listing-card {
   margin: 0;
+  position: relative;
+}
+
+.listing-card .fave-img {
+  position: absolute;
+  right: 0.875rem;
+  top: 1.125rem;
 }

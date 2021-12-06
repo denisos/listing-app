@@ -9,11 +9,11 @@ import './PropertyListing.css';
 
 function PropertyListing() {
   const intl = useIntl();
-  const { listings, status } = useListings();
+  const { listings, status, setFave } = useListings();
 
-  const handleFave = useCallback(() => {
-    console.log("handleFave clicked");
-  }, []);
+  const handleFaveClick = useCallback((mlsId) => {
+    setFave(mlsId)
+  }, [setFave]);
 
 
   if (status === 'loading') {
@@ -31,7 +31,7 @@ function PropertyListing() {
       <ul className="property-listing">
         {listings.map((listing) => (
           <li key={listing.mlsId}>
-            <ListingCard listing={listing} handleFave={handleFave} />
+            <ListingCard listing={listing} handleFaveClick={handleFaveClick} />
           </li>
         ))}
       </ul>

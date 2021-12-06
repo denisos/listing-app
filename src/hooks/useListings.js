@@ -1,60 +1,80 @@
 import { useEffect, useState } from "react";
 import { getListings } from '../api/api';
+import { getLocalStorage, setLocalStorage, setFaveInLocalStorage } from '../utils/utils';
 
-function getLocalStorage(key) {
-  try {
-    const listings = window.localStorage.getItem(key);
-    return listings ? JSON.parse(listings) : listings;
-  } catch(e) {
-    // log error using https://sentry.io/ or similar
-    return null;
+
+const updateListingsForFave = (listings, favesMap) => {
+  if (!favesMap) {
+    return listings;
   }
+
+  const newListings =  listings.map((listing) => {
+    // if there's a value we need to set it
+    const faveValue = favesMap[listing.mlsId];
+    if (faveValue !== undefined) {
+      return {
+        ...listing,
+        isFave: faveValue
+      }
+    }
+
+    return listing;
+  });
+
+  return newListings;
 }
-function setLocalStorage(key, data) {
-  try {
-    window.localStorage.setItem(key, JSON.stringify(data));
-  } catch(e) {
-    // log error using https://sentry.io/ or similar
-    return;
-  }
-}
+
 
 function useListings() {
   const [listings, setListings] = useState([]);
   const [status, setStatus] = useState('loading');
+
+  function setFave(mlsId) {
+    // update the cache
+    const favesMap = setFaveInLocalStorage(mlsId);
+
+    setListings((prevListings) => {
+      return updateListingsForFave(prevListings, favesMap)
+    });
+  }
  
   useEffect(() => {
     setStatus('loading');
 
     const lsListings = getLocalStorage('listings');
     if (lsListings) {
-      console.log("loaded listings from cache")
       setListings(lsListings);
       setStatus('success');
     }
 
-    // (async function fetchListings() {
-    //   try {
-    //     window.setTimeout(async () => {
-    //       const listings = await getListings();
-    //       setListings(listings);
-  
-    //       setStatus('success');
-    //       console.log("loaded listings from api")
-  
-    //       setLocalStorage('listings', listings)
-    //     }, 5000)
+    (async function fetchListings() {
+      try {
+        // added setTimeout for testing purposes to test cache
+        // window.setTimeout(async () => {
+          // retrieve listings
+          const listings = await getListings();
 
-    //   } catch(e) {
-    //     console.log('Error getListings', e);  // log error using https://sentry.io/ or similar
-    //     setStatus('error');
-    //   }
-    // }());
+          // merge with faves info
+          const newListings = updateListingsForFave(listings, getLocalStorage('faves'));
+          setListings(newListings);
+          setStatus('success');
+  
+          // replace what's in localStorage (could also check if it's stale or not or if changed)
+          setLocalStorage('listings', newListings);
+        // }, 5000)
+
+      } catch(e) {
+        console.log('Error getListings', e);  // log error using https://sentry.io/ or similar
+        setStatus('error');
+      }
+    }());
+
   }, [])
 
   return {
     listings,
-    status
+    status,
+    setFave
   }
 }
 

@@ -60,3 +60,11 @@ Uses https://api.simplyrets.com/properties to fetch mock listing data.
 - convert to use scss (or similar)
 - convert to typescript
 
+# figma design sample
+![image](https://user-images.githubusercontent.com/1072590/145150670-a3446374-ff93-48b2-86a5-b81bd50fd5ca.png)
+
+# sequence diagram
+![image](https://user-images.githubusercontent.com/1072590/145150746-120375bf-1c36-4c72-8981-fc213e7f4aea.png)
+
+
+- images: "title" and "alt" text on images

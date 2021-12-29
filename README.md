@@ -16,6 +16,13 @@ Open [http://localhost:3000/listings](http://localhost:3000/listings) to view th
 ## tests
 `yarn test`
 
+### run once or ci
+`yarn test:ci`
+
+### ci with github actions
+This repo has a github action (test.yml) setup to run jest tests on PRs or pushes or manually (as a workflow_dispatch)
+
+![test](https://github.com/denisos/listing-app/actions/workflows/test.yml/badge.svg)
 
 # Code and Design Decisions
 

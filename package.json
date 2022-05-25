@@ -1,6 +1,6 @@
 {
-  "name": "rets-react-take-home-assignment-core",
-  "description": "React take-home assignment for interview candidates.",
+  "name": "listing-app",
+  "description": "A (simple) mobile first responsive, internationalized, accessible, api driven and caching app.",
   "version": "0.1.0",
   "engines": {
     "node": "^14"
@@ -12,8 +12,8 @@
     "test:ci": "CI=true yarn test",
     "eject": "react-scripts eject"
   },
-  "repository": "https://github.com/reside-eng/rets-react-take-home-assignment-core.git",
-  "author": "Side Inc.",
+  "repository": "https://github.com/denisos/listing-app",
+  "author": "https://github.com/denisos",
   "dependencies": {
     "bootstrap": "5.1.3",
     "react": "^17.0.2",
